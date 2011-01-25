@@ -22,3 +22,6 @@ Examples
 --------
 
 1. LED_Strip_Example - This is the original unmodified example from Nate at Sparkfun
+2. ShiftRandom - A functional copy of the Sparkfun example using the LEDStrip library
+
+
