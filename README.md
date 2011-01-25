@@ -18,10 +18,23 @@ It will now show up in _Arduino, Examples, LEDStrip_ and can be used in your own
 
 Let me know if you have any problems
 
+Usage
+-----
+	LEDStrip ledStrip = LEDStrip();
+	ledStrip.set(0, 0xFF0000); //red
+	ledStrip.set(1, 0x00FF00); //green
+	ledStrip.set(2, 0x0000FF); //blue
+	ledStrip.flush(); //write buffer out to hardware
+	ledStrip.shiftDown();
+	ledStrip.flush();
+	ledStrip.clear(); //clear all to zero
+	ledStrip.flush();
+
+
 Examples
 --------
 
 1. LED_Strip_Example - This is the original unmodified example from Nate at Sparkfun
-2. ShiftRandom - A functional copy of the Sparkfun example using the LEDStrip library
+2. ShiftRandom (needs to be tested) - A functional copy of the Sparkfun example using the LEDStrip library
 
 

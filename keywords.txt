@@ -13,6 +13,7 @@ LEDStrip  KEYWORD1
 set KEYWORD2
 clear KEYWORD2
 flush KEYWORD2
+shiftDown KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

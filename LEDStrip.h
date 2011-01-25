@@ -14,10 +14,12 @@ class LEDStrip {
     int set(int position, long color);
 	void clear();
     void flush();
+    long shiftDown();
 
   private: 
     long strip_colors[STRIP_LENGTH];
-		
+    int SDI;
+    int CKI;
 };
 
 #endif //LEDSTRIP_H
