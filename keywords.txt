@@ -11,9 +11,13 @@ LEDStrip  KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 set KEYWORD2
+get KEYWORD2
 clear KEYWORD2
 flush KEYWORD2
 shiftDown KEYWORD2
+shiftUp KEYWORD2
+rotateDown KEYWORD2
+rotateUp KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
