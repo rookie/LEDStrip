@@ -2,11 +2,21 @@
 
 
 LEDStrip::LEDStrip() {
-    SDI = 2; //Red wire (not the red 5V wire!)
-    CKI = 3; //Green wire
+    setPins(3, 2); // 2, Red wire (not the red 5V wire!)
+                   // 3, Green wire
+    clear();
+}
+
+LEDStrip::LEDStrip(int clock_pin, int data_pin) {
+    setPins(clock_pin, data_pin);
+    clear();
+}
+
+void LEDStrip::setPins(int clock_pin, int data_pin) {
+    SDI = data_pin;
+    CKI = clock_pin;
     pinMode(SDI, OUTPUT);
     pinMode(CKI, OUTPUT);
-    clear();
 }
 
 int LEDStrip::set(int position, long color) {
@@ -15,6 +25,11 @@ int LEDStrip::set(int position, long color) {
     if(position <  0) return -1;
     
     strip_colors[position] = color;
+    return 0;
+}
+
+long LEDStrip::get(int position) {
+    return strip_colors[position];
 }
 
 void LEDStrip::clear() {
@@ -68,3 +83,27 @@ long LEDStrip::shiftDown() {
         
     return lastColor;
 }
+
+void LEDStrip::rotateDown() {
+    long color = shiftDown();
+    set(0, color);
+}
+
+long LEDStrip::shiftUp() {
+    //shift all the current colors up one spot on the strip
+    //return the color shifted out
+    int i;
+    long firstColor = strip_colors[0];
+    
+    for(i = 0 ; i < (STRIP_LENGTH - 1) ; i++)
+        strip_colors[i] = strip_colors[i + 1];
+        
+    return firstColor;
+}
+
+void LEDStrip::rotateUp() {
+    long color = shiftUp();
+    set(STRIP_LENGTH - 1, color);
+}
+
+
