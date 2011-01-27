@@ -36,5 +36,5 @@ Examples
 
 1. LED_Strip_Example - This is the original unmodified example from Nate at Sparkfun
 2. ShiftRandom (needs to be tested) - A functional copy of the Sparkfun example using the LEDStrip library
-
-
+3. SineWaveRotate (needs testing) - Rotates a red sine wave pattern down the strip
+4. ColorBlink (needs testing) - Blinks the entire strip through 7 main colors 

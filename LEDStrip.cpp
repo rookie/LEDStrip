@@ -33,9 +33,13 @@ long LEDStrip::get(int position) {
 }
 
 void LEDStrip::clear() {
-    //clear ledstrip buffer
+    clear(0);
+}
+
+void LEDStrip::clear(long color) {
+    //clear ledstrip buffer and fill with a specific color
     for(int i = 0 ; i < STRIP_LENGTH ; i++)
-        strip_colors[i] = 0;
+        strip_colors[i] = color;
 }
 
 //Takes the current strip color array and pushes it out

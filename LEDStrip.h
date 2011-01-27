@@ -23,7 +23,8 @@ class LEDStrip {
     LEDStrip(int clock_pin, int data_pin); //set your own clock and data pins
     int  set(int position, long color);    //save 'color' at 'position'
     long get(int position); //return color at 'position'
-	void clear();     //clear buffer to zero
+    void clear();     //clear buffer to zero
+    void clear(long color);
     void flush();     //write buffer to strip
     long shiftDown(); //shift all colors down one, return shifted out color
     long shiftUp();   //shift all colors up one, return shifted out color
