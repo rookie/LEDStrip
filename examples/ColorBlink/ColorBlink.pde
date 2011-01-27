@@ -49,20 +49,3 @@ void loop() {
   loop_index++;
   loop_index %= 7;
 }
-
-//Throws random colors down the strip array
-void addRandom(void) {
-  int x;
-  
-  ledStrip.shiftDown();
-   
-  //Now form a new RGB color
-  long new_color = 0;
-  for(x = 0 ; x < 3 ; x++){
-    new_color <<= 8;
-    new_color |= random(0xFF); //Give me a number from 0 to 0xFF
-    //new_color &= 0xFFFFF0; //Force the random number to just the upper brightness levels. It sort of works.
-  }
-  
-  ledStrip.set(0, new_color); //Add the new random color to the strip
-}
